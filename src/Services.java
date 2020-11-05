@@ -1,17 +1,12 @@
 
-import java.awt.HeadlessException;
+import net.proteanit.sql.DbUtils;
+
+import javax.swing.*;
+import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import net.proteanit.sql.DbUtils;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,7 +15,7 @@ import net.proteanit.sql.DbUtils;
  */
 /**
  *
- * @author Agarwal
+ * @author team
  */
 public class Services extends javax.swing.JFrame {
 Connection con=null;

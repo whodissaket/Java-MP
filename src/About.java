@@ -5,7 +5,7 @@
  */
 /**
  *
- * @author Agarwal
+ * @author team
  */
 public class About extends javax.swing.JFrame {
 
@@ -38,7 +38,7 @@ public class About extends javax.swing.JFrame {
         jLabel1.setText("Hospital Management System");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Code Projects Organization");
+        jLabel2.setText("By Saket , Pushkar ,Yash and Sandesh");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

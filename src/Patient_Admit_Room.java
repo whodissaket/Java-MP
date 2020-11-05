@@ -1,12 +1,9 @@
 
-import java.awt.HeadlessException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
+
+import javax.swing.*;
+import java.awt.*;
+import java.sql.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,7 +12,7 @@ import net.proteanit.sql.DbUtils;
  */
 /**
  *
- * @author Agarwal
+ * @author team
  */
 public class Patient_Admit_Room extends javax.swing.JFrame {
     Connection con=null;

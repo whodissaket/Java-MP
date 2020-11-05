@@ -1,11 +1,10 @@
 
-import java.awt.HeadlessException;
+import javax.swing.*;
+import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import java.sql.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,7 +13,7 @@ import java.sql.*;
  */
 /**
  *
- * @author Agarwal
+ * @author team
  */
 public class login extends javax.swing.JFrame {
 

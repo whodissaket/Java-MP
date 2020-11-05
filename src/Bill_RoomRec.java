@@ -1,11 +1,10 @@
 
+import net.proteanit.sql.DbUtils;
+
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.NumberFormat;
-import java.util.Locale;
-import javax.swing.JOptionPane;
-import net.proteanit.sql.DbUtils;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,7 +13,7 @@ import net.proteanit.sql.DbUtils;
  */
 /**
  *
- * @author Agarwal
+ * @author team
  */
 public class Bill_RoomRec extends javax.swing.JFrame {
     Connection con=null;    
