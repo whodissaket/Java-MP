@@ -1,10 +1,9 @@
 
-import net.proteanit.sql.DbUtils;
-
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,7 +12,7 @@ import java.sql.ResultSet;
  */
 /**
  *
- * @author team
+ * @author Agarwal
  */
 public class Patient_Discharge_roomRec1 extends javax.swing.JFrame {
 
@@ -126,8 +125,7 @@ public class Patient_Discharge_roomRec1 extends javax.swing.JFrame {
                 frm.txtBloodGroup.setText(add7);
                 String add9=rs.getString("Disease");
                 frm.txtDisease.setText(add9);
-                String add11=rs.getString("AdmitDate");
-                frm.txtAdmitDate.setText(add11);
+                
                 String add14=rs.getString("RoomNo");
                 frm.txtRoomNo.setText(add14);
                 String add18=rs.getString("DischargeDate");

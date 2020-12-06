@@ -112,8 +112,7 @@ public class Patient_Admit_roomRec2 extends javax.swing.JFrame {
                 frm.txtBloodGroup.setText(add7);
                 String add9=rs.getString("Disease");
                 frm.txtDisease.setText(add9);
-                String add11=rs.getString("AdmitDate");
-                frm.txtAdmitDate.setText(add11);
+                
                 String add14=rs.getString("RoomNo");
                 frm.txtRoomNo.setText(add14);
                           

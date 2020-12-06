@@ -3,10 +3,7 @@ import net.proteanit.sql.DbUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -33,7 +30,7 @@ PreparedStatement pst=null;
  private void Get_Data1(){
       try{
         con=Connect.ConnectDB();
-        String sql="select PatientID as 'Patient ID', PatientName as 'Patient Name' from Patientregistration order by PatientName";
+        String sql="select PatientID as 'Patient ID',Remarks as 'Remarks', PatientName as 'Patient Name' from Patientregistration order by PatientName";
          
          pst=con.prepareStatement(sql);
          rs= pst.executeQuery();
@@ -92,15 +89,15 @@ PreparedStatement pst=null;
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Services Info"));
 
-        jLabel1.setText("Service Name");
+        jLabel1.setText("Service Name*");
 
-        jLabel2.setText("Service Date");
+        jLabel2.setText("Service Date*");
 
         jLabel3.setText("Patient ID");
 
         jLabel4.setText("Patient Name");
 
-        jLabel5.setText("Service Charges");
+        jLabel5.setText("Service Charges*");
 
         txtServiceName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +192,7 @@ PreparedStatement pst=null;
             }
         });
 
+        txtDelete.setForeground(new java.awt.Color(255, 0, 0));
         txtDelete.setText("Delete");
         txtDelete.setEnabled(false);
         txtDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -278,7 +276,7 @@ PreparedStatement pst=null;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addGap(37, 37, 37)
                         .addComponent(txtServiceID, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,7 +328,16 @@ PreparedStatement pst=null;
                 JOptionPane.showMessageDialog( this, "Please enter service charges");
                 return;
             }
-
+Statement stmt;
+       stmt= con.createStatement();
+       String sql1="Select PatientID from services where PatientID= '" + txtPatientID.getText() + "'";
+      rs=stmt.executeQuery(sql1);
+      if(rs.next()){
+        JOptionPane.showMessageDialog( this, "Patient ID already exists","Error", JOptionPane.ERROR_MESSAGE);
+        txtPatientID.setText("");
+        txtPatientID.requestDefaultFocus();
+       return;
+      }
             String sql= "insert into Services(ServiceName,ServiceDate,PatientID,ServiceCharges)values('"+ txtServiceName.getText() + "','"+ txtServiceDate.getText() + "','" + txtPatientID.getText() + "'," + txtServiceCharges.getText() + ")";
             pst=con.prepareStatement(sql);
             pst.execute();
@@ -374,7 +381,7 @@ PreparedStatement pst=null;
     }//GEN-LAST:event_txtUpdateActionPerformed
 
     private void txtGetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGetDataActionPerformed
-        this.hide();
+        //this.hide();
         ServicesRec frm= new ServicesRec();
         frm.setVisible(true);
     }//GEN-LAST:event_txtGetDataActionPerformed

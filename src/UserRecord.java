@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author team
+ * @author Team
  */
 public class UserRecord extends javax.swing.JFrame {
 
@@ -27,7 +27,7 @@ public class UserRecord extends javax.swing.JFrame {
     }
 
     private void Get_Data() {
-        String sql = "select name as 'Name', user_name as 'User Name',password,contact_no as 'Contact No',email_id as 'Email ID' from registration";
+        String sql = "select name as 'Name', user_name as 'User Name',contact_no as 'Contact No',email_id as 'Email ID' from registration";
         try {
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -83,9 +83,7 @@ public class UserRecord extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
